@@ -3,6 +3,7 @@ from vk_api import VkUpload
 from vk_api.utils import get_random_id
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
+from tok import tok
 import time
 
 def dialog_sender(sender, message):
@@ -26,7 +27,7 @@ def chat_sender_with_sticker(sender, sticker_id):
                                        'sticker_id': sticker_id,
                                        'random_id': get_random_id()})
 
-token = "ec4e237351d28971b2fd592184f44692eed3a471416e0e0237e4b8a9bb5ef634ab40e95a668283ab2e9c8"
+token = tok
 authorize = vk_api.VkApi(token=token)
 longpoll = VkBotLongPoll(authorize, group_id=209649159)
 list_of_chats = []
